@@ -1,0 +1,22 @@
+<html>
+
+<body>
+  <h2>My Login Page</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="save(loginForm)">
+    Email : <input type="email" name="email" formControlName="email"> <br><br><br>
+    Password : <input type="password" name="email" formControlName="password"> <br><br><br>
+    Mobile Number: <input type="number" name="email" formControlName="mobileNum"> <br><br><br>
+
+    <button type="submit" [routerLink]="['/details']">Submit</button>
+  </form>
+
+
+
+
+</body>
+<div><a [routerLink]="['/details']">Go to Employee List Page</a></div>
+<div><a [routerLink]="['/attendence']">Go to Employee Attendence Page</a></div>
+<div> <a [routerLink]="['/rules']">Go to Employee Rules Page</a></div>
+
+</html>

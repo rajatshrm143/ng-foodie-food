@@ -1,0 +1,111 @@
+<html>
+
+<body>
+    <h2>Employee list page</h2>
+
+    <form [formGroup]="addEmpForm" class="example-form">
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Enter Name</mat-label>
+            <input matInput placeholder="Enter Name" value="" formControlName="empName">
+
+        </mat-form-field>
+        <!-- <span *ngIf="!addEmpForm.get('empName').valid && addEmpForm.get('empName').touched">
+            Enter a name please
+        </span> -->
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="Address" formControlName="address"></textarea>
+
+        </mat-form-field>
+        <!-- <span *ngIf="!addEmpForm.get('address').valid && addEmpForm.get('empName').touched">
+            Enter address please
+        </span> -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Mobile No</mat-label>
+            <input matInput placeholder="Mobile No" value="" formControlName="mobileNo">
+
+        </mat-form-field>
+        <!-- <span *ngIf="!addEmpForm.get('mobileNo').valid && addEmpForm.get('mobileNo').touched">
+            Enter address please
+        </span> -->
+
+        <!-- <div>Enter Name - <input type="text" name="empName" formControlName="empName"></div>
+        <div>Address - <textarea name="address" formControlName="address"></textarea></div>
+        <div>Mobile No - <input type="number" name="mobileNo" formControlName="mobileNo"></div> -->
+
+        <!-- Group of input fields from array for epmloyee working history -->
+        <div formArrayName="empHistory">
+            <!-- <ng-container *ngIf="addEmpForm.controls.empHistory != null"> -->
+            <h4>Enter Employment History - </h4>
+            <div *ngFor="let row of addEmpForm.controls['empHistory']['controls'];let i=index">
+                <!-- <div *ngFor="let row of addEmpForm.controls.empHistory.controls;let i=index"> -->
+                <div [formGroupName]="i">
+
+                    <!-- Date Picker -->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter From date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="fromDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter To date</mat-label>
+                        <input matInput [matDatepicker]="picker1" formControlName="toDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Enter Salary</mat-label>
+                        <input matInput placeholder="Salary" value="" formControlName="salary">
+                    </mat-form-field>
+                    <!-- <input placeholder="Enter data" type="text" name="toDate" formControlName="toDate">
+                    <input placeholder="Enter data" type="text" name="fromDate" formControlName="fromDate">
+                    <input placeholder="Enter data" type="text" name="salary" formControlName="salary"> -->
+
+                    <!-- <button (click)="addEmpHistory()">+</button>
+                    <button (click)="deleteEmpHistory(i)">X</button> -->
+                    <button mat-raised-button color="success" (click)="addEmpHistory()">+</button>
+                    <button mat-raised-button color="danger" (click)="deleteEmpHistory(i)">X</button>
+                </div>
+
+
+            </div>
+
+            <!-- </ng-container> -->
+
+        </div>
+        <br><br><br>
+        <div>
+            <button mat-raised-button color="primary" [disabled]="!addEmpForm.valid">Submit</button>
+        </div>
+
+        <!-- Group of input fields from array for epmloyee educational history -->
+        <!-- <div formGroupName="eduHistory">
+            <ng-container *ngIf="addEmpForm.controls.eduHistory != null">
+
+                <div *ngFor="let row1 of addEmpForm.controls.eduHistory.controls;let  j=index">
+                    <input type="text" name="toDate" [formControlName]="toDate">
+                    <input type="text" name="fromDate" [formControlName]="fromDate">
+                    <input type="text" name="completeYear" [formControlName]="completeYear">
+                </div>
+                <div><button (click)="addEduHistory()">+</button></div>
+                <div><button (click)="deleteEduHistory(j)">X</button></div>
+            </ng-container>
+
+        </div> -->
+    </form>
+    <br><br><br>
+
+    <!-- Default route '/do-login' or '/' for login page-->
+    <!-- <a [routerLink]="['/do-login']">Go Back to Login Page</a><br><br><br> -->
+
+    <!-- Applied './route-name' (.Dot) for child route notation -->
+    <!-- <a [routerLink]="['./emp-attendence']">Employee Attendence Page</a><br><br><br>
+    <a [routerLink]="['./emp-rules']">Employee Rules Page</a><br><br><br> -->
+
+</body>
+
+</html>

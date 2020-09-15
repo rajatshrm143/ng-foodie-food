@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private serv: DoServiceService, private frmBuild: FormBuilder) {
 
+    console.log('This is login module');
 
     this.loginForm = this.frmBuild.group({
       email: ['', [Validators.required, Validators.email, Validators.minLength(10), Validators.maxLength(30)]],

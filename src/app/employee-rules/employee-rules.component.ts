@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeRulesComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('This is EMP-rules Module');
+  }
 
   ngOnInit(): void {
   }

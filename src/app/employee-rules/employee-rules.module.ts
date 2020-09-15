@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeRulesComponent } from './employee-rules.component'
 
 
-const route: Routes = [{
+const routes: Routes = [{
   path: '',
   component: EmployeeRulesComponent,
   // children : [{
@@ -16,8 +16,8 @@ const route: Routes = [{
 
 
 @NgModule({
-  imports: [RouterModule, CommonModule],
-  exports: [],
+  imports: [RouterModule.forChild(routes), CommonModule],
+  exports: [RouterModule],
   declarations: [],
 })
 export class EmployeeRulesModule { }

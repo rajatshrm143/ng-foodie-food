@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Employee Search';
+
+  constructor() {
+    console.log('This is Main App module');
+  }
 }

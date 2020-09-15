@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { EmployeeAttendenceComponent } from './employee-attendence.component';
 
-const route: Routes = [{
+const routes: Routes = [{
   path: '',
   component: EmployeeAttendenceComponent,
   // children : [{
@@ -13,8 +13,8 @@ const route: Routes = [{
 }]
 
 @NgModule({
-  imports: [RouterModule, CommonModule],
-  exports: [],
+  imports: [RouterModule.forChild(routes), CommonModule],
+  exports: [RouterModule],
   declarations: [],
 })
 export class EmployeeAttendenceModule { }

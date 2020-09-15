@@ -1,7 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
+// import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,12 +14,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RouterModule, Routes } from "@angular/router";
 
 // Material Modules
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatDialogModule } from '@angular/material/dialog';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatDatepickerModule } from '@angular/material/datepicker';
+// import { MatNativeDateModule } from '@angular/material/core';
 
 import { EmployeeAttendenceModule } from './employee-attendence/employee-attendence.module';
 import { EmployeeRulesModule } from './employee-rules/employee-rules.module';
@@ -75,22 +76,23 @@ const routes: Routes = [
     // EmployeeAttendenceComponent
   ],
   imports: [
-    BrowserModule,
+    // BrowserModule,
+    BrowserAnimationsModule,
+    // CommonModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule, // for building model driven forms/ reactive forms
     EmpDetailsModule,
     EmployeeAttendenceModule,
     EmployeeRulesModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+    // MatButtonModule,
+    // MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
 
   ],
   // We use exports so that we can use it in anyother component when needed
-  exports: [
-    MatButtonModule,
-    MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+  exports: [RouterModule,
+    // MatButtonModule,
+    // MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
     EmpDetailsModule,
     EmployeeAttendenceModule,
     EmployeeRulesModule

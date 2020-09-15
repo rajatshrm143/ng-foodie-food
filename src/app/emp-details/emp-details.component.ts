@@ -12,7 +12,9 @@ export class EmpDetailsComponent implements OnInit {
 
   addEmpForm: FormGroup;
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog) {
+    console.log('This is EMP-details Module');
+  }
 
   ngOnInit(): void {
 

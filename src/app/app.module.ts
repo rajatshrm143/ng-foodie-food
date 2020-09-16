@@ -1,29 +1,18 @@
 // import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-// import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-// import { EmpDetailsComponent } from './emp-details/emp-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-// import { EmployeeRulesComponent } from './employee-rules/employee-rules.component';
-// import { EmployeeAttendenceComponent } from './employee-attendence/employee-attendence.component';
 import { RouterModule, Routes } from "@angular/router";
-
-// Material Modules
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatDialogModule } from '@angular/material/dialog';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatDatepickerModule } from '@angular/material/datepicker';
-// import { MatNativeDateModule } from '@angular/material/core';
 
 import { EmployeeAttendenceModule } from './employee-attendence/employee-attendence.module';
 import { EmployeeRulesModule } from './employee-rules/employee-rules.module';
 import { EmpDetailsModule } from './emp-details/emp-details.module';
 import { DoServiceService } from './do-service.service';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -70,33 +59,18 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    // EmpDetailsComponent,
-    PageNotFoundComponent,
-    // EmployeeRulesComponent,
-    // EmployeeAttendenceComponent
+    PageNotFoundComponent
   ],
   imports: [
     // BrowserModule,
     BrowserAnimationsModule,
-    // CommonModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule, // for building model driven forms/ reactive forms
-    EmpDetailsModule,
-    EmployeeAttendenceModule,
-    EmployeeRulesModule,
-    // MatButtonModule,
-    // MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
-
+    MatButtonModule
   ],
   // We use exports so that we can use it in anyother component when needed
-  exports: [RouterModule,
-    // MatButtonModule,
-    // MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
-    EmpDetailsModule,
-    EmployeeAttendenceModule,
-    EmployeeRulesModule
-  ],
+  exports: [RouterModule],
 
   providers: [DoServiceService],
   bootstrap: [AppComponent]

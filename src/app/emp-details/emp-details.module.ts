@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { EmpDetailsComponent } from "./emp-details.component";
-// Material Modules
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -22,16 +20,12 @@ const routes: Routes = [{
 }]
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), CommonModule,
+  imports: [RouterModule.forChild(routes), CommonModule, ReactiveFormsModule, FormsModule,
     MatButtonModule,
     MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
-    ReactiveFormsModule
+
   ],
-  exports: [RouterModule,
-    MatButtonModule,
-    MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, FormsModule, ReactiveFormsModule
-  ],
-  declarations: [],
+  declarations: [EmpDetailsComponent],
 
 })
 export class EmpDetailsModule {

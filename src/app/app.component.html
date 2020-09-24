@@ -1,7 +1,13 @@
 <!-- All the component views will be displayed here at the place of <router-outlet> tag -->
-<h1>Welcome Guys!</h1>
+<h1>Welcome Guys! Time is {{time | async}}</h1>
+
 <button mat-raised-button color="success" routerLink="">Home</button>
 <button mat-raised-button color="accent" routerLink="/details">details</button>
 <button mat-raised-button color="warn" routerLink="/attendence">attendence</button>
 <button mat-raised-button color="primary" routerLink="/rules">rules</button>
 <router-outlet></router-outlet>
+
+<div>
+    <li *ngFor="let row of softBook | async">Serial : {{row | json}}
+    </li>
+</div>

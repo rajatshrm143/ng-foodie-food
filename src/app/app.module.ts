@@ -14,7 +14,10 @@ import { EmpDetailsModule } from './emp-details/emp-details.module';
 import { DoServiceService } from './do-service.service';
 import { MatButtonModule } from '@angular/material/button';
 
-
+import { HttpClientModule } from "@angular/common/http"
+// import { InMemoryWebApiModule } from "angular-in-memory-web-api"
+// import { TestData } from "./testdata";
+import { Book } from "./book";
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
@@ -65,9 +68,15 @@ const routes: Routes = [
     // BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
     RouterModule.forRoot(routes),
+
     ReactiveFormsModule, // for building model driven forms/ reactive forms
-    MatButtonModule
+
+    MatButtonModule,
+
+    HttpClientModule, // Http client module import to work in service
+    // InMemoryWebApiModule.forRoot(TestData) // to use angular-in-memory-web-api
   ],
   // We use exports so that we can use it in anyother component when needed
   exports: [RouterModule],

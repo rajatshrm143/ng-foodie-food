@@ -17,7 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from "@angular/common/http"
 // import { InMemoryWebApiModule } from "angular-in-memory-web-api"
 // import { TestData } from "./testdata";
-import { Book } from "./book";
+// import { Book } from "./book";
+import { MyguardGuard } from "./myguard.guard"
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
@@ -46,12 +47,14 @@ const routes: Routes = [
   {
     path: 'attendence',
     // loadChildren: 'app/employee-attendence/employee-attendence.module#EmployeeAttendenceModule'
-    loadChildren: () => import('./employee-attendence/employee-attendence.module').then(m => EmployeeAttendenceModule)
+    loadChildren: () => import('./employee-attendence/employee-attendence.module').then(m => EmployeeAttendenceModule),
+    canActivate: [MyguardGuard] // applied "canActivate" authGuard
   },
   {
     path: 'rules',
     // loadChildren: 'app/employee-rules/employee-rules.module#EmployeeRulesModule'
-    loadChildren: () => import('./employee-rules/employee-rules.module').then(m => EmployeeRulesModule)
+    loadChildren: () => import('./employee-rules/employee-rules.module').then(m => EmployeeRulesModule),
+    canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
   },
 
   //wildcard route - if any path does not match with above paths

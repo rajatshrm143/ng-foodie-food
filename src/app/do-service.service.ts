@@ -21,6 +21,11 @@ export class DoServiceService {
     return this.http.get<any[]>(`https://jsonplaceholder.typicode.com/posts?userId=1`);
   }
 
+  // to test AuthGuard
+  dummyLogin() {
+    return false;
+  }
+
 
   // getBooksFromStore(): Observable<any> {
   //   return new Observable((observer) => {

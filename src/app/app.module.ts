@@ -18,7 +18,12 @@ import { HttpClientModule } from "@angular/common/http"
 // import { InMemoryWebApiModule } from "angular-in-memory-web-api"
 // import { TestData } from "./testdata";
 // import { Book } from "./book";
-import { MyguardGuard } from "./myguard.guard"
+import { MyguardGuard } from "./myguard.guard";
+
+// These components have the implementation of Auxiliary routes & Named Router outlets
+import { ListShowComponent } from './list-show/list-show.component';
+import { DetailShowComponent } from './detail-show/detail-show.component';
+
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
@@ -56,6 +61,7 @@ const routes: Routes = [
     loadChildren: () => import('./employee-rules/employee-rules.module').then(m => EmployeeRulesModule),
     canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
   },
+  { path: 'list-show', component: ListShowComponent },
 
   //wildcard route - if any path does not match with above paths
   { path: '**', component: PageNotFoundComponent },
@@ -65,7 +71,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ListShowComponent,
+    DetailShowComponent
   ],
   imports: [
     // BrowserModule,

@@ -1,3 +1,10 @@
-<h4>This is Rules page!</h4>
-
-<!-- <a [routerLink]="['/details']">Go Back to Employee List Page</a> -->
+<div>
+    <!-- <li *ngFor="let row of softBook | async">Serial : {{row | json}}
+    </li> -->
+    <ng-container *ngIf="softBook | async as arr;else showLoading">
+        <li *ngFor="let row of arr">{{row | json}}</li>
+    </ng-container>
+    <ng-template #showLoading>
+        <h2><span>Loading please wait...</span></h2>
+    </ng-template>
+</div>

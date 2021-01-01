@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoServiceService } from '../do-service.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.desc = this.serv.mySum();
     this.title = this.serv.title;
+
+    // Enables jQuery here !!
+    $(document).ready(function () {
+      $("#magic").click(function () {
+        window.alert("See the magic of jQuery!");
+      })
+    })
 
 
   }

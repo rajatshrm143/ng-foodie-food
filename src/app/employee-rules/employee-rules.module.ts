@@ -18,6 +18,6 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes), CommonModule],
   exports: [RouterModule],
-  declarations: [],
+  declarations: [EmployeeRulesComponent],
 })
 export class EmployeeRulesModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DoServiceService } from '../do-service.service';
 
 @Component({
   selector: 'app-employee-rules',
@@ -6,12 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-rules.component.css']
 })
 export class EmployeeRulesComponent implements OnInit {
+  softBook: Observable<any>;
 
-  constructor() {
+  constructor(private serv: DoServiceService) {
     console.log('This is EMP-rules Module');
   }
 
   ngOnInit(): void {
+    this.getSoftBooks();
+  }
+
+  getSoftBooks() {
+    setTimeout(() => {
+      this.softBook = this.serv.getBooksFromStore();
+      console.log(this.softBook)
+    }, 5000);
+
   }
 
 }

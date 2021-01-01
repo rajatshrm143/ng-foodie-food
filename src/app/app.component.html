@@ -1,19 +1,8 @@
 <!-- All the component views will be displayed here at the place of <router-outlet> tag -->
 <h1>Welcome Guys! Time is {{time | async}}</h1>
-
 <button mat-raised-button color="success" routerLink="" routerLinkActive="active">Home</button>
 <button mat-raised-button color="accent" routerLink="/details" routerLinkActive="active">Register</button>
 <button mat-raised-button color="warn" routerLink="/attendence" routerLinkActive="active">Attendence</button>
 <button mat-raised-button color="primary" routerLink="/rules" routerLinkActive="active">Rules</button>
+<button mat-raised-button color="basic" routerLink="/list-show" routerLinkActive="active">List</button>
 <router-outlet></router-outlet>
-
-<div>
-    <!-- <li *ngFor="let row of softBook | async">Serial : {{row | json}}
-    </li> -->
-    <ng-container *ngIf="softBook | async as arr;else showLoading">
-        <li *ngFor="let row of arr">{{row | json}}</li>
-    </ng-container>
-    <ng-template #showLoading>
-        <h2><span>Loading please wait...</span></h2>
-    </ng-template>
-</div>

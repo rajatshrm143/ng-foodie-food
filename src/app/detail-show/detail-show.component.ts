@@ -11,6 +11,7 @@ export class DetailShowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.message = "Counter is , now:" + this.mycount;
   }
 
   plusOne() {

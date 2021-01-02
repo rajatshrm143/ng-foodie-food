@@ -23,14 +23,16 @@ import { MyguardGuard } from "./myguard.guard";
 // These components have the implementation of Auxiliary routes & Named Router outlets
 import { ListShowComponent } from './list-show/list-show.component';
 import { DetailShowComponent } from './detail-show/detail-show.component';
+import { DetailShowDirective } from './detail-show/detail-show.directive';
+import { HostListenerComponent } from './host-listener/host-listener.component';
 
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
-  { path: '', redirectTo: 'do-login', pathMatch: 'full' }, // for default route at first application load
+  { path: '', redirectTo: 'routing-jquery', pathMatch: 'full' }, // for default route at first application load
 
   // defining the route to load which component
-  { path: 'do-login', component: LoginComponent },
+  { path: 'routing-jquery', component: LoginComponent },
 
   // ******** This part is only for learning purpose, will not be working now because they are modules now
   // defining child/minor routes of a parent/major component
@@ -45,23 +47,24 @@ const routes: Routes = [
 
   // Applying Lazy-loading here, to load the sub-modules only on demand
   {
-    path: 'details',
+    path: 'mat-form',
     // loadChildren: 'app/emp-details/emp-details.module#EmpDetailsModule'
     loadChildren: () => import('./emp-details/emp-details.module').then(m => EmpDetailsModule)
   },
   {
-    path: 'attendence',
+    path: 'auth-guard',
     // loadChildren: 'app/employee-attendence/employee-attendence.module#EmployeeAttendenceModule'
     loadChildren: () => import('./employee-attendence/employee-attendence.module').then(m => EmployeeAttendenceModule),
     canActivate: [MyguardGuard] // applied "canActivate" authGuard
   },
   {
-    path: 'rules',
+    path: 'web-api',
     // loadChildren: 'app/employee-rules/employee-rules.module#EmployeeRulesModule'
     loadChildren: () => import('./employee-rules/employee-rules.module').then(m => EmployeeRulesModule),
     canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
   },
-  { path: 'list-show', component: ListShowComponent },
+  { path: 'view-child', component: ListShowComponent },
+  { path: 'host-listener', component: HostListenerComponent },
 
   //wildcard route - if any path does not match with above paths
   { path: '**', component: PageNotFoundComponent },
@@ -73,7 +76,9 @@ const routes: Routes = [
     LoginComponent,
     PageNotFoundComponent,
     ListShowComponent,
-    DetailShowComponent
+    DetailShowComponent,
+    DetailShowDirective,
+    HostListenerComponent
   ],
   imports: [
     // BrowserModule,

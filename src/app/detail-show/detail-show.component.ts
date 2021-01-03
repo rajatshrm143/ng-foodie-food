@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-detail-show',
   templateUrl: './detail-show.component.html',
-  styleUrls: ['./detail-show.component.css']
+  styleUrls: ['./detail-show.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DetailShowComponent implements OnInit {
   mycount: number = 0;

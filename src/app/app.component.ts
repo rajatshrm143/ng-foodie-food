@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 import { DoServiceService } from "./do-service.service"
 // import { Book } from './book';
 import { Observable, Observer } from "rxjs";
@@ -10,6 +10,7 @@ import { Observable, Observer } from "rxjs";
 })
 export class AppComponent {
   title = 'Employee Search';
+  ngVersion: string = 'Angular ' + VERSION.full;
 
   time = new Observable<string>((observer: Observer<string>) => {
     setInterval(() => observer.next(new Date().toString()), 3000);

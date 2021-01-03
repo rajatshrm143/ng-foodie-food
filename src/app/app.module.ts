@@ -25,6 +25,7 @@ import { ListShowComponent } from './list-show/list-show.component';
 import { DetailShowComponent } from './detail-show/detail-show.component';
 import { DetailShowDirective } from './detail-show/detail-show.directive';
 import { HostListenerComponent } from './host-listener/host-listener.component';
+import { ComponentDecorComponent } from './component-decor/component-decor.component';
 
 
 const routes: Routes = [
@@ -65,6 +66,7 @@ const routes: Routes = [
   },
   { path: 'view-child', component: ListShowComponent },
   { path: 'host-listener', component: HostListenerComponent },
+  { path: 'component-decor', component: ComponentDecorComponent },
 
   //wildcard route - if any path does not match with above paths
   { path: '**', component: PageNotFoundComponent },
@@ -78,7 +80,8 @@ const routes: Routes = [
     ListShowComponent,
     DetailShowComponent,
     DetailShowDirective,
-    HostListenerComponent
+    HostListenerComponent,
+    ComponentDecorComponent
   ],
   imports: [
     // BrowserModule,

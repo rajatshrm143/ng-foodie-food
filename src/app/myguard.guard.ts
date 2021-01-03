@@ -26,7 +26,7 @@ export class MyguardGuard implements CanActivate, CanActivateChild, CanDeactivat
   }
   // ********************************************************************
 
-  // ask before leaving the particular component*********************
+  // ask before leaving the particular component*************************
   canDeactivate(): boolean {
     if (window.confirm("Are you sure you want to leave this page?")) {
       return true;
@@ -35,7 +35,7 @@ export class MyguardGuard implements CanActivate, CanActivateChild, CanDeactivat
       return false;
     }
   }
-  // *****************************************************************
+  // *********************************************************************
 
   canActivateChild(
     next: ActivatedRouteSnapshot,

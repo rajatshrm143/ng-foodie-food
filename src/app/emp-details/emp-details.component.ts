@@ -1,11 +1,12 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-emp-details',
   templateUrl: './emp-details.component.html',
-  styleUrls: ['./emp-details.component.css']
+  styleUrls: ['./emp-details.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EmpDetailsComponent implements OnInit {
 

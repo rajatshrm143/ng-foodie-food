@@ -1,2 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Custom CSS created by Rajat */
+@import "../src/assets/common.css"

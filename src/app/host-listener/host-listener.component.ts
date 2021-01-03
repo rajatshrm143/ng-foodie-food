@@ -1,9 +1,10 @@
-import { Component, OnInit, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Renderer2, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-host-listener',
   templateUrl: './host-listener.component.html',
-  styleUrls: ['./host-listener.component.css']
+  styleUrls: ['./host-listener.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HostListenerComponent implements OnInit {
 

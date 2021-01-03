@@ -1,5 +1,5 @@
 <!-- All the component views will be displayed here at the place of <router-outlet> tag -->
-<h1>Welcome Guys! Time is {{time | async}}</h1>
+<h2>Welcome {{ngVersion}}! Time is {{time | async}}</h2>
 
 <button mat-raised-button color="success" routerLink="" routerLinkActive="active">
     Routing & jQuery
@@ -17,12 +17,16 @@
     Web API
 </button>&nbsp;&nbsp;
 
-<button mat-raised-button color="warn" routerLink="/view-child" routerLinkActive="active">
+<button mat-raised-button color="accent" routerLink="/view-child" routerLinkActive="active">
     ViewChild
 </button>&nbsp;&nbsp;
 
-<button mat-raised-button color="accent" routerLink="/host-listener" routerLinkActive="active">
+<button mat-raised-button color="warn" routerLink="/host-listener" routerLinkActive="active">
     HostListener
+</button>&nbsp;&nbsp;
+
+<button mat-raised-button color="primary" routerLink="/component-decor" routerLinkActive="active">
+    Component Decor
 </button>&nbsp;&nbsp;
 
 

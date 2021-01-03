@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DoServiceService } from '../do-service.service';
 
 @Component({
   selector: 'app-employee-rules',
   templateUrl: './employee-rules.component.html',
-  styleUrls: ['./employee-rules.component.css']
+  styleUrls: ['./employee-rules.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class EmployeeRulesComponent implements OnInit {
   softBook: Observable<any>;

@@ -1,25 +1,32 @@
-<h2>==> Using @ViewChild for displaying child component's content.</h2>
-<h3>Press button to see DOM of other component class</h3>
+<div class="title">
+    <h3>=> Using @ViewChild for displaying child component's content.</h3>
+</div>
+<h4>Press button to see DOM of other component class</h4>
+
 <button (click)="plus()">+</button>&nbsp;
 <button (click)="minus()">-</button>
 <!-- 'app-detail-show' is the selector name of the component 'DetailShowComponent' class -->
 <!-- 'app-detail-show' is used as a HTML tag here -->
 <app-detail-show></app-detail-show>
 
-<br>
+<div class="title">
+    <h3>=> Using @ViewChild Directive to change element color.</h3>
+    <!-- 'appDetailShow' is the selector name of the directive 'DetailShowDirective' class -->
+    <!-- 'appDetailShow' is used as a HTML property here -->
+</div>
+<h4 appDetailShow>Press button to see color change from other directive class</h4>
 
-<h2>==> Using @ViewChild Directive to change element color.</h2>
-<!-- 'appDetailShow' is the selector name of the directive 'DetailShowDirective' class -->
-<!-- 'appDetailShow' is used as a HTML property here -->
-<h3 appDetailShow>Press button to see color change from other directive class</h3>
 <button (click)="changeClr('blue')">Blue</button>&nbsp;
 <button (click)="changeClr('green')">Green</button>&nbsp;
 <button (click)="changeClr('black')">Black</button>&nbsp;
 
 <br>
 
-<h2>==> Using @ViewChild Template Ref variable.</h2>
-<h3>Changed colors with Template Ref variable.</h3>
+<div class="title">
+    <h3>=> Using @ViewChild Template Ref variable.</h3>
+</div>
+<h4>Changed colors with Template Ref variable.</h4>
+
 Full Name : <input type="text" #fullname><br>
 Address : <input type="text" #address> <br>
 

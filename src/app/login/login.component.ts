@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DoServiceService } from '../do-service.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as $ from "jquery";
@@ -7,7 +7,8 @@ import * as $ from "jquery";
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [DoServiceService] // this is component level service injection
+  providers: [DoServiceService], // this is component level service injection
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
 

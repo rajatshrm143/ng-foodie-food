@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, ViewEncapsulation } from '@angular/core';
 import { DetailShowComponent } from '../detail-show/detail-show.component';
 import { DetailShowDirective } from '../detail-show/detail-show.directive';
 
 @Component({
   selector: 'app-list-show',
   templateUrl: './list-show.component.html',
-  styleUrls: ['./list-show.component.css']
+  styleUrls: ['./list-show.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ListShowComponent implements OnInit, AfterViewInit {
 

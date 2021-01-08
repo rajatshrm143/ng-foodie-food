@@ -29,6 +29,9 @@
             <input matInput placeholder="Mobile No" value="" formControlName="mobileNo">
 
         </mat-form-field>
+        <!-- <mat-form-field class="example-full-width"> -->
+
+        <!-- </mat-form-field> -->
         <!-- <span *ngIf="!addEmpForm.get('mobileNo').valid && addEmpForm.get('mobileNo').touched">
             Enter address please
         </span> -->
@@ -72,14 +75,18 @@
                     <button mat-raised-button color="success" (click)="addEmpHistory()">+</button>
                     <button mat-raised-button color="danger" (click)="deleteEmpHistory(i)">X</button>
                 </div>
-
+                <br><br><br>
 
             </div>
 
             <!-- </ng-container> -->
 
         </div>
-        <br><br><br>
+        <div>
+            <ngx-recaptcha2 matInput #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+            </ngx-recaptcha2>
+        </div>
+
         <div>
             <button mat-raised-button color="primary" [disabled]="!addEmpForm.valid">Submit</button>
         </div>

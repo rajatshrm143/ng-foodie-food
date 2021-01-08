@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgxCaptchaModule } from "ngx-captcha";
 
 
 const routes: Routes = [{
@@ -22,7 +23,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes), CommonModule, ReactiveFormsModule, FormsModule,
     MatButtonModule,
-    MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+    MatDialogModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, NgxCaptchaModule
 
   ],
   declarations: [EmpDetailsComponent],

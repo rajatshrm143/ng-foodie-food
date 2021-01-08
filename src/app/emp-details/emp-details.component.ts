@@ -11,9 +11,11 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 export class EmpDetailsComponent implements OnInit {
 
   addEmpForm: FormGroup;
+  siteKey: string;
 
   constructor(private fb: FormBuilder, public dialog: MatDialog) {
     console.log('This is EMP-details Module');
+    this.siteKey = '6Lf3SyQaAAAAAEhclP9b8dNskp2d8OxB9xOxDHXk';
   }
 
   ngOnInit(): void {
@@ -23,7 +25,8 @@ export class EmpDetailsComponent implements OnInit {
       address: ['', Validators.required],
       mobileNo: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12)])],
       empHistory: this.fb.array([this.addMoreEmp()]),
-      // eduHistory: this.fb.array([this.addMoreEdu()])
+      // eduHistory: this.fb.array([this.addMoreEdu()]),
+      recaptcha: ['', Validators.required]
     })
   }
 

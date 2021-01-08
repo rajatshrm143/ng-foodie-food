@@ -1,33 +1,46 @@
-<!-- All the component views will be displayed here at the place of <router-outlet> tag -->
-<h2>Welcome {{ngVersion}}! Time is {{time | async}}</h2>
+<html>
 
-<button mat-raised-button color="success" routerLink="" routerLinkActive="active">
-    Routing & jQuery
-</button>&nbsp;&nbsp;
+<body>
 
-<button mat-raised-button color="accent" routerLink="/mat-form" routerLinkActive="active">
-    Material Form
-</button>&nbsp;&nbsp;
+    <!-- All the component views will be displayed here at the place of <router-outlet> tag -->
+    <h2>Welcome {{ngVersion}}! This is <span>{{time | async | date:"EEEE, MMMM d, y, h:mm:ss a"}}</span>
+    </h2>
 
-<button mat-raised-button color="warn" routerLink="/auth-guard" routerLinkActive="active">
-    AuthGuard
-</button>&nbsp;&nbsp;
+    <button mat-raised-button color="success" routerLink="" routerLinkActive="active">
+        Routing & jQuery
+    </button>&nbsp;&nbsp;
 
-<button mat-raised-button color="primary" routerLink="/web-api" routerLinkActive="active">
-    Web API
-</button>&nbsp;&nbsp;
+    <button mat-raised-button color="accent" routerLink="/mat-form" routerLinkActive="active">
+        Material Form
+    </button>&nbsp;&nbsp;
 
-<button mat-raised-button color="accent" routerLink="/view-child" routerLinkActive="active">
-    ViewChild
-</button>&nbsp;&nbsp;
+    <button mat-raised-button color="warn" routerLink="/auth-guard" routerLinkActive="active">
+        AuthGuard
+    </button>&nbsp;&nbsp;
 
-<button mat-raised-button color="warn" routerLink="/host-listener" routerLinkActive="active">
-    HostListener
-</button>&nbsp;&nbsp;
+    <button mat-raised-button color="primary" routerLink="/web-api" routerLinkActive="active">
+        Web API
+    </button>&nbsp;&nbsp;
 
-<button mat-raised-button color="primary" routerLink="/component-decor" routerLinkActive="active">
-    Component Decor
-</button>&nbsp;&nbsp;
+    <button mat-raised-button color="accent" routerLink="/view-child" routerLinkActive="active">
+        ViewChild
+    </button>&nbsp;&nbsp;
+
+    <button mat-raised-button color="warn" routerLink="/host-listener" routerLinkActive="active">
+        HostListener
+    </button>&nbsp;&nbsp;
+
+    <button mat-raised-button color="primary" routerLink="/component-decor" routerLinkActive="active">
+        Component Decor
+    </button>&nbsp;&nbsp;
+
+    <button mat-raised-button color="accent" routerLink="/captcha" routerLinkActive="active">
+        reCaptcha
+    </button>&nbsp;&nbsp;
 
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+
+</body>
+
+</html>

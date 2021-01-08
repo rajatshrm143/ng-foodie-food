@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DoServiceService } from '../do-service.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as $ from "jquery";
+import { CookieService } from "ngx-cookie-service";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup; // for making form group
 
-  constructor(private serv: DoServiceService, private frmBuild: FormBuilder) {
+  constructor(private serv: DoServiceService, private frmBuild: FormBuilder,
+    private cookie: CookieService) {
 
     console.log('This is login module');
 
@@ -39,6 +41,11 @@ export class LoginComponent implements OnInit {
         window.alert("See the magic of jQuery!");
       })
     })
+
+    this.cookie.set("userId", "Rajat Sharma");
+    this.cookie.set("userType", "Special Permissions, Enjoy!");
+
+    console.log(this.cookie.getAll());
 
 
   }

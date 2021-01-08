@@ -26,7 +26,7 @@ import { DetailShowComponent } from './detail-show/detail-show.component';
 import { DetailShowDirective } from './detail-show/detail-show.directive';
 import { HostListenerComponent } from './host-listener/host-listener.component';
 import { ComponentDecorComponent } from './component-decor/component-decor.component';
-
+import { CookieService } from "ngx-cookie-service";
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
@@ -81,7 +81,7 @@ const routes: Routes = [
     DetailShowComponent,
     DetailShowDirective,
     HostListenerComponent,
-    ComponentDecorComponent
+    ComponentDecorComponent,
   ],
   imports: [
     // BrowserModule,
@@ -100,7 +100,7 @@ const routes: Routes = [
   // We use exports so that we can use it in anyother component when needed
   exports: [RouterModule],
 
-  providers: [DoServiceService],
+  providers: [DoServiceService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

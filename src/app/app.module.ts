@@ -27,6 +27,7 @@ import { DetailShowDirective } from './detail-show/detail-show.directive';
 import { HostListenerComponent } from './host-listener/host-listener.component';
 import { ComponentDecorComponent } from './component-decor/component-decor.component';
 import { CookieService } from "ngx-cookie-service";
+import { UnitTestingModule } from './unit-testing/unit-testing.module';
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
@@ -68,6 +69,8 @@ const routes: Routes = [
   { path: 'host-listener', component: HostListenerComponent },
   { path: 'component-decor', component: ComponentDecorComponent },
 
+  { path: 'unit-testing', loadChildren: () => import('./unit-testing/unit-testing.module').then(m => UnitTestingModule) },
+
   //wildcard route - if any path does not match with above paths
   { path: '**', component: PageNotFoundComponent },
 ];
@@ -96,6 +99,7 @@ const routes: Routes = [
 
     HttpClientModule, // Http client module import to work in service
     // InMemoryWebApiModule.forRoot(TestData) // to use angular-in-memory-web-api
+    UnitTestingModule
   ],
   // We use exports so that we can use it in anyother component when needed
   exports: [RouterModule],

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule, Routes } from "@angular/router";
+import { MaterialModule } from "./shared/material.module"
 
 import { EmployeeAttendenceModule } from './employee-attendence/employee-attendence.module';
 import { EmployeeRulesModule } from './employee-rules/employee-rules.module';
@@ -28,6 +29,8 @@ import { HostListenerComponent } from './host-listener/host-listener.component';
 import { ComponentDecorComponent } from './component-decor/component-decor.component';
 import { CookieService } from "ngx-cookie-service";
 import { UnitTestingModule } from './unit-testing/unit-testing.module';
+import { RxjsOperatorsModule } from './rxjs-operators/rxjs-operators.module';
+import { StoreModule } from '@ngrx/store';
 
 const routes: Routes = [
   //  whenever we hit "localhost:4200" it will redirct to "do-login" path
@@ -65,11 +68,19 @@ const routes: Routes = [
     loadChildren: () => import('./employee-rules/employee-rules.module').then(m => EmployeeRulesModule),
     canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
   },
+  {
+    path: 'unit-testing',
+    loadChildren: () => import('./unit-testing/unit-testing.module').then(m => UnitTestingModule),
+    canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
+  },
+  {
+    path: 'rxjs-operators',
+    loadChildren: () => import('./rxjs-operators/rxjs-operators.module').then(m => RxjsOperatorsModule),
+  },
   { path: 'view-child', component: ListShowComponent },
   { path: 'host-listener', component: HostListenerComponent },
   { path: 'component-decor', component: ComponentDecorComponent },
 
-  { path: 'unit-testing', loadChildren: () => import('./unit-testing/unit-testing.module').then(m => UnitTestingModule) },
 
   //wildcard route - if any path does not match with above paths
   { path: '**', component: PageNotFoundComponent },
@@ -89,20 +100,25 @@ const routes: Routes = [
   imports: [
     // BrowserModule,
     BrowserAnimationsModule,
+
     AppRoutingModule,
+
+    MaterialModule,
 
     RouterModule.forRoot(routes),
 
     ReactiveFormsModule, // for building model driven forms/ reactive forms
 
-    MatButtonModule,
+    // MatButtonModule,
 
     HttpClientModule, // Http client module import to work in service
     // InMemoryWebApiModule.forRoot(TestData) // to use angular-in-memory-web-api
-    UnitTestingModule
+
+    // StoreModule.forRoot({})
+
   ],
   // We use exports so that we can use it in anyother component when needed
-  exports: [RouterModule],
+  exports: [RouterModule, MaterialModule],
 
   providers: [DoServiceService, CookieService],
   bootstrap: [AppComponent]

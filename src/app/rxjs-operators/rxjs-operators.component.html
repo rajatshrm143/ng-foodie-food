@@ -1,0 +1,30 @@
+<div class="title">
+    <h3>=> Using RxJs Operators to work with Reactive Programming.</h3>
+</div>
+<h4>1.1 Working with Promises(JS) to see Async approach!</h4>
+<h3>Click on the </h3>
+
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                <button color="primary" mat-stroked-button (click)="toggleHP()">
+                    HP Available : {{isHPAvailable}}
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button color="accent" mat-stroked-button (click)="toggleDell()">
+                    Dell Available : {{isDellAvailable}}
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button color="warn" mat-stroked-button (click)="runPromise()">Buy a Laptop</button>
+            </div>
+            <div class="col-md-3" [style.color]="statuscolor">
+                Status : <strong>{{laptopBuy?.status}}</strong><br>
+                Model : <strong>{{laptopBuy?.model}}</strong><br>
+                Price : <strong>{{laptopBuy?.price}}</strong><br>
+            </div>
+        </div>
+    </div>
+</div>

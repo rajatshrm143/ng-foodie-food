@@ -10,6 +10,7 @@ import { DoServiceService } from '../do-service.service';
 })
 export class EmployeeRulesComponent implements OnInit {
   softBook: Observable<any>;
+  forkArray: any;
 
   constructor(private serv: DoServiceService) {
     console.log('This is EMP-rules Module');
@@ -17,6 +18,7 @@ export class EmployeeRulesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSoftBooks();
+    this.getForkJoinData();
   }
 
   getSoftBooks() {
@@ -24,6 +26,13 @@ export class EmployeeRulesComponent implements OnInit {
       this.softBook = this.serv.getBooksFromStore();
       console.log(this.softBook)
     }, 5000);
+
+  }
+
+  getForkJoinData() {
+
+    this.forkArray = this.serv.getForkJoinData();
+    console.log(this.forkArray)
 
   }
 

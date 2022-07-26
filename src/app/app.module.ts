@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RouterModule, Routes } from "@angular/router";
-import { MaterialModule } from "./shared/material.module"
+import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from './shared/material.module';
 
 import { EmployeeAttendenceModule } from './employee-attendence/employee-attendence.module';
 import { EmployeeRulesModule } from './employee-rules/employee-rules.module';
@@ -15,11 +15,11 @@ import { EmpDetailsModule } from './emp-details/emp-details.module';
 import { DoServiceService } from './do-service.service';
 import { MatButtonModule } from '@angular/material/button';
 
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from '@angular/common/http';
 // import { InMemoryWebApiModule } from "angular-in-memory-web-api"
 // import { TestData } from "./testdata";
 // import { Book } from "./book";
-import { MyguardGuard } from "./myguard.guard";
+import { MyguardGuard } from './myguard.guard';
 
 // These components have the implementation of Auxiliary routes & Named Router outlets
 import { ListShowComponent } from './list-show/list-show.component';
@@ -27,7 +27,7 @@ import { DetailShowComponent } from './detail-show/detail-show.component';
 import { DetailShowDirective } from './detail-show/detail-show.directive';
 import { HostListenerComponent } from './host-listener/host-listener.component';
 import { ComponentDecorComponent } from './component-decor/component-decor.component';
-import { CookieService } from "ngx-cookie-service";
+import { CookieService } from 'ngx-cookie-service';
 import { UnitTestingModule } from './unit-testing/unit-testing.module';
 import { RxjsOperatorsModule } from './rxjs-operators/rxjs-operators.module';
 import { StoreModule } from '@ngrx/store';
@@ -54,33 +54,45 @@ const routes: Routes = [
   {
     path: 'mat-form',
     // loadChildren: 'app/emp-details/emp-details.module#EmpDetailsModule'
-    loadChildren: () => import('./emp-details/emp-details.module').then(m => EmpDetailsModule)
+    loadChildren: () =>
+      import('./emp-details/emp-details.module').then((m) => EmpDetailsModule),
   },
   {
     path: 'auth-guard',
     // loadChildren: 'app/employee-attendence/employee-attendence.module#EmployeeAttendenceModule'
-    loadChildren: () => import('./employee-attendence/employee-attendence.module').then(m => EmployeeAttendenceModule),
-    canActivate: [MyguardGuard] // applied "canActivate" authGuard
+    loadChildren: () =>
+      import('./employee-attendence/employee-attendence.module').then(
+        (m) => EmployeeAttendenceModule
+      ),
+    canActivate: [MyguardGuard], // applied "canActivate" authGuard
   },
   {
     path: 'web-api',
     // loadChildren: 'app/employee-rules/employee-rules.module#EmployeeRulesModule'
-    loadChildren: () => import('./employee-rules/employee-rules.module').then(m => EmployeeRulesModule),
-    canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
+    loadChildren: () =>
+      import('./employee-rules/employee-rules.module').then(
+        (m) => EmployeeRulesModule
+      ),
+    canDeactivate: [MyguardGuard], // applied "canDeactivate" authGuard
   },
   {
     path: 'unit-testing',
-    loadChildren: () => import('./unit-testing/unit-testing.module').then(m => UnitTestingModule),
-    canDeactivate: [MyguardGuard]  // applied "canDeactivate" authGuard
+    loadChildren: () =>
+      import('./unit-testing/unit-testing.module').then(
+        (m) => UnitTestingModule
+      ),
+    canDeactivate: [MyguardGuard], // applied "canDeactivate" authGuard
   },
   {
     path: 'rxjs-operators',
-    loadChildren: () => import('./rxjs-operators/rxjs-operators.module').then(m => RxjsOperatorsModule),
+    loadChildren: () =>
+      import('./rxjs-operators/rxjs-operators.module').then(
+        (m) => RxjsOperatorsModule
+      ),
   },
   { path: 'view-child', component: ListShowComponent },
   { path: 'host-listener', component: HostListenerComponent },
   { path: 'component-decor', component: ComponentDecorComponent },
-
 
   //wildcard route - if any path does not match with above paths
   { path: '**', component: PageNotFoundComponent },
@@ -115,12 +127,11 @@ const routes: Routes = [
     // InMemoryWebApiModule.forRoot(TestData) // to use angular-in-memory-web-api
 
     // StoreModule.forRoot({})
-
   ],
   // We use exports so that we can use it in anyother component when needed
   exports: [RouterModule, MaterialModule],
 
   providers: [DoServiceService, CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
